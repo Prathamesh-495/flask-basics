@@ -88,16 +88,30 @@
 
         <!-- Profile card using multiple variables -->
         <div class="profile-card">
-            <h2>{{ name }}</h2>
+            <h2>{{ name | default('User') }}</h2>
+        
             <div class="profile-item">
-                <span>Age:</span> {{ age }} years old
+                <span>Age:</span> {{ age | default('N/A') }} years old
             </div>
+        
             <div class="profile-item">
-                <span>Course:</span> {{ course }}
+                <span>Course:</span> {{ course | default('Not specified') }}
             </div>
+        
+            <div class="profile-item">
+                <span>Email:</span> {{ email | default('Not provided') }}
+            </div>
+        
+            <div class="profile-item">
+                <span>City:</span> {{ city | default('Unknown') }}
+            </div>
+        
+            <div class="profile-item">
+                <span>College:</span> {{ college | default('Not mentioned') }}
+            </div>
+        
             <div class="profile-item">
                 <span>Status:</span>
-                <!-- Using Jinja2 conditional (if/else) -->
                 {% if is_enrolled %}
                     <span class="badge badge-success">Enrolled</span>
                 {% else %}
@@ -105,6 +119,7 @@
                 {% endif %}
             </div>
         </div>
+        
 
         <h2>How It Works</h2>
         <p>In <code>app.py</code>, we pass multiple variables:</p>
