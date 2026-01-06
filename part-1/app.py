@@ -11,10 +11,14 @@ from flask import Flask  # Import Flask class from the flask package
 
 app = Flask(__name__)  # Create Flask app instance, __name__ tells Flask where to look for templates/static files
 
-
+#exercise 1.1
+# @app.route('/')  # Decorator that maps URL '/' (home page) to this function
+# def home():
+#     return "Hello Prathamesh"  # This text displays in the browser
+#exercise 1.2
 @app.route('/')  # Decorator that maps URL '/' (home page) to this function
 def home():
-    return "Hello Prathamesh"  # This text displays in the browser
+    return "<h1>Hello Flask!</h1><p>This is HTML</p>"  # This text displays in the browser
 
 
 if __name__ == '__main__':
