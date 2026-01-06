@@ -26,7 +26,7 @@ def profile():
         'course': 'Web Development',
         'is_enrolled': True,
         'email':'prathamesh@gmail.com',
-        'city' : 'Nashik',
+        'city' : 'Nashik', 
         'college' : 'GESCOE'
     }
     return render_template('profile.html',
@@ -53,6 +53,19 @@ def projects():
         {'name': 'Weather App', 'status': 'Planned', 'tech': 'JavaScript'},
     ]
     return render_template('projects.html', projects=project_list)
+
+
+#exercise 3.3
+@app.route('/grades')
+def grades():
+    student_grades = {
+        'Math': 'A',
+        'Computer Networks': 'B+',
+        'DBMS': 'A',
+        'Operating Systems': 'A-'
+    }
+    return render_template('grades.html', grades=student_grades)
+
 
 
 if __name__ == '__main__':
