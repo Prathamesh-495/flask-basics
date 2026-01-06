@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+    <h1>Search</h1>
+
+    <p>Search results for: <strong>{{ query }}</strong></p>
+
+    <hr>
+
+    <!-- BONUS SEARCH FORM -->
+    <form method="post" action="/search">
+        <input type="text" name="query" placeholder="Search again">
+        <button type="submit">Search</button>
+    </form>
+
+    <p>
+        Try:
+        <a href="/search/flask">flask</a> |
+        <a href="/search/python">python</a>
+    </p>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>

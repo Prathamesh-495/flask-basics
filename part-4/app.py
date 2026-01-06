@@ -55,6 +55,26 @@ def show_links():
     }
     return render_template('links.html', links=links)
 
+#exercise 4.1
+@app.route('/product/<int:product_id>')
+def product(product_id):
+    products = {
+        1: {'name': 'Laptop', 'price': 60000},
+        2: {'name': 'Mobile', 'price': 25000},
+        3: {'name': 'Headphones', 'price': 3000},
+    }
+
+    product = products.get(product_id)
+    return render_template('product.html', product=product, product_id=product_id)
+
+#exercise 4.2
+@app.route('/category/<category_name>/product/<int:product_id>')
+def category_product(category_name, product_id):
+    return render_template(
+        'category_product.html',
+        category=category_name,
+        product_id=product_id
+    )
 
 if __name__ == '__main__':
     app.run(debug=True)

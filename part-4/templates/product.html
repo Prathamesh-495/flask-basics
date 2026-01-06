@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product</title>
+</head>
+<body>
+    <h1>Product Page</h1>
+
+    {% if product %}
+        <p><strong>Product ID:</strong> {{ product_id }}</p>
+        <p><strong>Name:</strong> {{ product.name }}</p>
+        <p><strong>Price:</strong> ₹{{ product.price }}</p>
+    {% else %}
+        <p style="color:red;">Product Not Found</p>
+    {% endif %}
+
+    <p>
+        Try:
+        <a href="/product/1">Product 1</a> |
+        <a href="/product/2">Product 2</a> |
+        <a href="/product/99">Invalid Product</a>
+    </p>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>
