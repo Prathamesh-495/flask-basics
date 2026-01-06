@@ -85,20 +85,24 @@ BLOG_POSTS = [
     {
         'id': 1,
         'title': 'Why I Started Learning Flask',
-        'content': 'Flask is lightweight, flexible, and perfect for backend beginners.',
-        'date': '2025-01-01'
+        'content': 'Flask is lightweight, flexible, and great for beginners.'
     },
     {
         'id': 2,
-        'title': 'Spring Boot vs Flask',
-        'content': 'Spring Boot is powerful for enterprise apps, Flask is great for rapid development.',
-        'date': '2025-01-05'
+        'title': 'My Backend Journey',
+        'content': 'Learning Flask after Java and Spring Boot.'
     }
 ]
 
+
 @app.route('/blog')
 def blog():
-    return render_template('blog.html', info=PERSONAL_INFO, posts=BLOG_POSTS)
+    return render_template(
+        'blog.html',
+        info=PERSONAL_INFO,   # REQUIRED for base.html
+        posts=BLOG_POSTS      # REQUIRED for blog.html
+    )
+
 
 #exercise 5.4
 @app.route('/skill/<skill_name>')
