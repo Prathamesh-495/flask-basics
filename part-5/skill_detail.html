@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Skill{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>Projects using {{ skill }}</h2>
+    {% if projects %}
+        <ul>
+        {% for p in projects %}
+            <li>{{ p.name }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No projects found.</p>
+    {% endif %}
+</div>
+{% endblock %}

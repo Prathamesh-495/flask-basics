@@ -18,26 +18,32 @@ app = Flask(__name__)
 # =============================================================================
 
 PERSONAL_INFO = {
-    'name': 'Your Name',
+    'name': 'Prathamesh Pande',
     'title': 'Web Developer',
-    'bio': 'A passionate developer learning Flask and web development.',
-    'email': 'your.email@example.com',
-    'github': 'https://github.com/yourusername',
-    'linkedin': 'https://linkedin.com/in/yourusername',
+    'bio': 'A passionate backend developer with experience in building web application using Java,Spring Boot ,and a problem solver at heart solving DSA problems on leetcode and GFG daily.',
+    'email': 'prathameshpande632@gmail.com',
+    'github': 'https://github.com/Prathamesh-495',
+    'linkedin': 'https://www.linkedin.com/in/prathamesh-pande-b76178344/',
 }
 
 SKILLS = [
-    {'name': 'Python', 'level': 80},
+    {'name': 'Python', 'level': 50},
     {'name': 'HTML/CSS', 'level': 75},
-    {'name': 'Flask', 'level': 60},
-    {'name': 'JavaScript', 'level': 50},
-    {'name': 'SQL', 'level': 45},
+    {'name': 'JDBC', 'level': 60},
+    {'name': 'C++', 'level': 90},
+    {'name': 'SQL', 'level': 75},
+    {'name': 'JAVA', 'level': 80},
+    {'name': 'Spring Boot', 'level': 45},
+    {'name': 'Hibernate', 'level': 80},
+    {'name': 'Junit ', 'level': 60}
 ]
 
 PROJECTS = [
     {'id': 1, 'name': 'Personal Website', 'description': 'A Flask-powered personal portfolio website.', 'tech': ['Python', 'Flask', 'HTML', 'CSS'], 'status': 'Completed'},
-    {'id': 2, 'name': 'Todo App', 'description': 'A simple task management application.', 'tech': ['Python', 'Flask', 'SQLite'], 'status': 'In Progress'},
-    {'id': 3, 'name': 'Weather Dashboard', 'description': 'Display weather data from an API.', 'tech': ['Python', 'Flask', 'API'], 'status': 'Planned'},
+    {'id': 2, 'name': 'Online Railway Reservation Systerm', 'description': 'A Backend Based Railway Reservation application.', 'tech': ['Java', 'SpringBoot', 'Hibernate', 'REST API', 'ReactJS', 'HTML/CSS'], 'status': 'Completed'},
+    {'id': 3, 'name': 'Weather Dashboard', 'description': 'Display Realtime weather data from an API.', 'tech': ['Java', 'SpringBoot', 'Gemini-API'], 'status': 'Completed'},
+    {'id': 4, 'name': 'Event Ticket Booking System', 'description': 'A distributed system for managing events, bookings, and payments.', 'tech': ['Java', 'SpringBoot', 'DOCKER', 'REST API', 'HTML/CSS'], 'status': 'Planned'},
+    {'id': 4, 'name': 'Student Management System', 'description': 'A basic system for managing records, departments, and roles.', 'tech': ['JAVA', 'SpringBoot', 'HTML/CSS', 'SQL', 'Hibernate',], 'status': 'In Progress'},
 ]
 
 
@@ -74,6 +80,41 @@ def project_detail(project_id):
 def contact():
     return render_template('contact.html', info=PERSONAL_INFO)
 
+#exercise 5.2
+BLOG_POSTS = [
+    {
+        'id': 1,
+        'title': 'Why I Started Learning Flask',
+        'content': 'Flask is lightweight, flexible, and perfect for backend beginners.',
+        'date': '2025-01-01'
+    },
+    {
+        'id': 2,
+        'title': 'Spring Boot vs Flask',
+        'content': 'Spring Boot is powerful for enterprise apps, Flask is great for rapid development.',
+        'date': '2025-01-05'
+    }
+]
+
+@app.route('/blog')
+def blog():
+    return render_template('blog.html', info=PERSONAL_INFO, posts=BLOG_POSTS)
+
+#exercise 5.4
+@app.route('/skill/<skill_name>')
+def skill_detail(skill_name):
+    related_projects = []
+
+    for project in PROJECTS:
+        if skill_name.lower() in [t.lower() for t in project['tech']]:
+            related_projects.append(project)
+
+    return render_template(
+        'skill_detail.html',
+        info=PERSONAL_INFO,
+        skill_name=skill_name,
+        projects=related_projects
+    )
 
 if __name__ == '__main__':
     app.run(debug=True)
