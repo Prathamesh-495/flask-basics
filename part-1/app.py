@@ -20,7 +20,9 @@ app = Flask(__name__)  # Create Flask app instance, __name__ tells Flask where t
 def home():
     return "<h1>Hello Flask!</h1><p>This is HTML</p>"  # This text displays in the browser
 
-
+@app.route('/about')
+def about():
+    return "this is about "
 if __name__ == '__main__':
     app.run(debug=True)  # debug=True enables auto-reload and detailed error messages
 
