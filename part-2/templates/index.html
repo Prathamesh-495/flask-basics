@@ -10,47 +10,65 @@
             max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #f5f5f5;
+            background-color: #eef2f7;
         }
         .container {
             background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         h1 {
-            color: #333;
+            color: #2c3e50;
+        }
+        h2 {
+            color: #34495e;
         }
         nav {
             margin-bottom: 20px;
         }
         nav a {
             margin-right: 15px;
-            color: #007bff;
+            color: #1e88e5;
             text-decoration: none;
+            font-weight: bold;
         }
         nav a:hover {
             text-decoration: underline;
         }
         .highlight {
-            background-color: #e7f3ff;
+            background-color: #e3f2fd;
             padding: 15px;
             border-radius: 5px;
-            border-left: 4px solid #007bff;
+            border-left: 4px solid #1e88e5;
+            margin: 20px 0;
+        }
+        p, li {
+            color: #444;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Navigation -->
+
+        <!-- SINGLE NAVIGATION -->
         <nav>
             <a href="/">Home</a>
             <a href="/about">About</a>
+            <a href="/contact">Contact</a>
         </nav>
 
         <h1>Welcome to Flask Templates!</h1>
 
-        <p>This page is being served from an HTML file in the <code>templates/</code> folder.</p>
+        <p>
+            This page is being served from an HTML file inside the
+            <code>templates/</code> folder using Flask.
+        </p>
+
+        <p>
+            Flask templates help you separate backend logic from frontend design,
+            making your application easier to understand and maintain.
+        </p>
 
         <div class="highlight">
             <strong>What's happening?</strong>
@@ -69,8 +87,17 @@
             <li><strong>Separation of Concerns:</strong> Python handles logic, HTML handles presentation</li>
             <li><strong>Easier to Maintain:</strong> Edit HTML without touching Python code</li>
             <li><strong>Reusability:</strong> Same template can be used with different data</li>
-            <li><strong>Jinja2 Power:</strong> We can add Python-like logic to HTML (next part!)</li>
+            <li><strong>Jinja2 Power:</strong> Add logic like loops and conditions</li>
         </ul>
+
+        <h2>Common Flask Template Features</h2>
+        <ul>
+            <li>Displaying variables sent from Flask</li>
+            <li>Using conditional statements</li>
+            <li>Looping through lists</li>
+            <li>Reusing layouts</li>
+        </ul>
+
     </div>
 </body>
 </html>

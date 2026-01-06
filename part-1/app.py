@@ -22,7 +22,7 @@ def home():
 
 @app.route('/about')
 def about():
-    return "this is about "
+    return "this is about page "
 if __name__ == '__main__':
     app.run(debug=True)  # debug=True enables auto-reload and detailed error messages
 
