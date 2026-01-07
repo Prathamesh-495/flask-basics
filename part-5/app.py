@@ -43,7 +43,7 @@ PROJECTS = [
     {'id': 2, 'name': 'Online Railway Reservation Systerm', 'description': 'A Backend Based Railway Reservation application.', 'tech': ['Java', 'SpringBoot', 'Hibernate', 'REST API', 'ReactJS', 'HTML/CSS'], 'status': 'Completed'},
     {'id': 3, 'name': 'Weather Dashboard', 'description': 'Display Realtime weather data from an API.', 'tech': ['Java', 'SpringBoot', 'Gemini-API'], 'status': 'Completed'},
     {'id': 4, 'name': 'Event Ticket Booking System', 'description': 'A distributed system for managing events, bookings, and payments.', 'tech': ['Java', 'SpringBoot', 'DOCKER', 'REST API', 'HTML/CSS'], 'status': 'Planned'},
-    {'id': 4, 'name': 'Student Management System', 'description': 'A basic system for managing records, departments, and roles.', 'tech': ['JAVA', 'SpringBoot', 'HTML/CSS', 'SQL', 'Hibernate',], 'status': 'In Progress'},
+    {'id': 5, 'name': 'Student Management System', 'description': 'A basic system for managing records, departments, and roles.', 'tech': ['JAVA', 'SpringBoot', 'HTML/CSS', 'SQL', 'Hibernate',], 'status': 'In Progress'},
 ]
 
 
