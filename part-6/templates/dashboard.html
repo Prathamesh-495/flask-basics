@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>📊 Dashboard</h2>
+</div>
+
+<div class="card">Total Tasks: <strong>{{ total }}</strong></div>
+<div class="card">Completed: <strong>{{ completed }}</strong></div>
+<div class="card">In Progress: <strong>{{ progress }}</strong></div>
+<div class="card">Pending: <strong>{{ pending }}</strong></div>
+{% endblock %}

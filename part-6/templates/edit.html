@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Task</h2>
+
+<form method="post">
+<input name="title" value="{{ task.title }}"><br><br>
+
+<select name="status">
+<option {{ 'selected' if task.status=='Pending' }}>Pending</option>
+<option {{ 'selected' if task.status=='In Progress' }}>In Progress</option>
+<option {{ 'selected' if task.status=='Completed' }}>Completed</option>
+</select><br><br>
+
+<select name="priority">
+<option {{ 'selected' if task.priority=='High' }}>High</option>
+<option {{ 'selected' if task.priority=='Medium' }}>Medium</option>
+<option {{ 'selected' if task.priority=='Low' }}>Low</option>
+</select><br><br>
+
+<button class="btn">Update</button>
+</form>
+{% endblock %}
