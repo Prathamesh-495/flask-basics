@@ -2,23 +2,22 @@
 {% block title %}Tasks{% endblock %}
 
 {% block content %}
-<div class="card">
-    <h2>📋 My Tasks</h2>
 
-    <p>
-        Filter:
-        <a href="/" class="btn btn-muted">All</a>
-        <a href="/?priority=High" class="btn btn-muted">High</a>
-        <a href="/?priority=Medium" class="btn btn-muted">Medium</a>
-        <a href="/?priority=Low" class="btn btn-muted">Low</a>
-    </p>
+<div class="card">
+    <h2>My Tasks</h2>
+    <div class="filters">
+        <a href="/" class="btn btn-light">All</a>
+        <a href="/?priority=High" class="btn btn-light">High</a>
+        <a href="/?priority=Medium" class="btn btn-light">Medium</a>
+        <a href="/?priority=Low" class="btn btn-light">Low</a>
+    </div>
 </div>
 
 {% for task in tasks %}
-<div class="card task-row">
-    <div>
-        <strong>{{ task.title }}</strong><br>
-        <small>{{ task.priority }}</small>
+<div class="card task">
+    <div class="task-left">
+        <div class="task-title">{{ task.title }}</div>
+        <div class="task-meta">{{ task.priority }}</div>
 
         {% if task.status == 'Completed' %}
             <span class="badge completed">Completed</span>
@@ -36,4 +35,5 @@
     </div>
 </div>
 {% endfor %}
+
 {% endblock %}

@@ -3,11 +3,11 @@
 
 {% block content %}
 <div class="card">
-    <h2>➕ Add New Task</h2>
+    <h2>➕ New Task</h2>
 
     <form method="post">
-        <label>Task Title</label>
-        <input name="title" required>
+        <label>Task title</label>
+        <input name="title" placeholder="What needs to be done?" required>
 
         <label>Status</label>
         <select name="status">
@@ -23,7 +23,7 @@
             <option>Low</option>
         </select>
 
-        <button class="btn btn-primary">Add Task</button>
+        <button class="btn btn-primary">Create Task</button>
     </form>
 </div>
 {% endblock %}
